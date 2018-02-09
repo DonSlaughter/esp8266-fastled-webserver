@@ -15,6 +15,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#define FASTLED_ESP8266_NODEMCU_PIN_ORDER   //for NodeMCU
+#define FASTLED_ALLOW_INTERRUPTS 0
 
 #include <FastLED.h>
 FASTLED_USING_NAMESPACE
@@ -52,10 +54,10 @@ ESP8266HTTPUpdateServer httpUpdateServer;
 
 #include "FSBrowser.h"
 
-#define DATA_PIN      D4
-#define LED_TYPE      WS2811
+#define DATA_PIN      8
+#define LED_TYPE      WS2812B
 #define COLOR_ORDER   GRB
-#define NUM_LEDS      24
+#define NUM_LEDS      68
 
 #define MILLI_AMPS         2000     // IMPORTANT: set the max milli-Amps of your power supply (4A = 4000mA)
 #define FRAMES_PER_SECOND  120 // here you can control the speed. With the Access Point / Web Server the animations run a bit slower.
